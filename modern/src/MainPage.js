@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { isWidthUp, makeStyles, withWidth } from '@material-ui/core';
+import { Grid, isWidthUp, makeStyles, withWidth } from '@material-ui/core';
 import Drawer from '@material-ui/core/Drawer';
 import ContainerDimensions from 'react-container-dimensions';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -10,6 +10,7 @@ import Map from './map/Map';
 import PositionsMap from './map/PositionsMap';
 import SelectedDeviceMap from './map/SelectedDeviceMap';
 import GeofenceMap from './map/GeofenceMap';
+import RouteReportPage from './reports/RouteReportPage';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,7 +55,10 @@ const MainPage = ({ width }) => {
           classes={{ paper: classes.drawerPaper }}>
           <DevicesList />
         </Drawer>
-        <div className={classes.mapContainer}>
+        <Grid item xs={12} md={9} lg={10}>
+        <RouteReportPage/>
+        </Grid>
+        {/* <div className={classes.mapContainer}>
           <ContainerDimensions>
             <Map>
               <GeofenceMap />
@@ -62,7 +66,7 @@ const MainPage = ({ width }) => {
               <SelectedDeviceMap />
             </Map>
           </ContainerDimensions>
-        </div>
+        </div> */}
       </div>
     </div>
   );

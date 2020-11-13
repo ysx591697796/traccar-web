@@ -70,19 +70,19 @@ const MainToolbar = () => {
     <>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             className={classes.menuButton}
             color="inherit"
             onClick={openDrawer}>
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" color="inherit" className={classes.flex}>
-            Traccar
+            FASTGps
         </Typography>
           <Button color="inherit" onClick={handleLogout}>{t('loginLogout')}</Button>
         </Toolbar>
       </AppBar>
-      <Drawer open={drawer} onClose={closeDrawer}>
+      {/* <Drawer open={drawer} onClose={closeDrawer}>
         <div
           tabIndex={0}
           className={classes.list}
@@ -198,7 +198,7 @@ const MainToolbar = () => {
             </>
           )}
         </div>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 }

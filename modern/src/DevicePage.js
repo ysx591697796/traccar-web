@@ -73,7 +73,9 @@ const DevicePage = () => {
                 defaultValue={item.model}
                 onChange={event => setItem({...item, model: event.target.value})}
                 label={t('deviceModel')}
-                variant="filled" />
+                value="GPT26" 
+                variant="filled"
+                disabled />
               <TextField
                 margin="normal"
                 defaultValue={item.contact}

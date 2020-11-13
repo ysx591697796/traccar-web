@@ -44,7 +44,11 @@ const DeviceView = ({ updateTimestamp, onMenuClick }) => {
     <List className={classes.list}>
       {items.map((item, index, list) => (
         <Fragment key={item.id}>
-          <ListItem button key={item.id} onClick={() => dispatch(devicesActions.select(item))}>
+          <ListItem 
+          // button 
+          key={item.id} 
+          // onClick={() => dispatch(devicesActions.select(item))}
+          >
             <ListItemAvatar>
               <Avatar>
                 <img className={classes.icon} src={`images/icon/${item.category || 'default'}.svg`} />
