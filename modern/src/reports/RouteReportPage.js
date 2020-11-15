@@ -31,6 +31,8 @@ const RouteReportPage = () => {
   const [to, setTo] = useState(moment());
   const [data, setData] = useState([]);
 
+  console.log(data);
+
   const handleShow = () => {
     let selectedFrom;
     let selectedTo;
@@ -140,17 +142,18 @@ const RouteReportPage = () => {
                     <TableCell>{t('positionLatitude')}</TableCell>
                     <TableCell>{t('positionLongitude')}</TableCell>
                     <TableCell>{t('positionSpeed')}</TableCell>
-                    <TableCell>{t('positionAddress')}</TableCell>
+                    {/* <TableCell>{t('positionAddress')}</TableCell> */}
+                    <TableCell>电量</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {data.map((item) => (
+                  {data.reverse().map((item) => (
                     <TableRow key={item.id}>
                       <TableCell>{formatPosition(item, 'fixTime')}</TableCell>
                       <TableCell>{formatPosition(item, 'latitude')}</TableCell>
                       <TableCell>{formatPosition(item, 'longitude')}</TableCell>
                       <TableCell>{formatPosition(item, 'speed')}</TableCell>
-                      <TableCell>{formatPosition(item, 'address')}</TableCell>
+                      <TableCell>{formatPosition(item, 'attributes')}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
